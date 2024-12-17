@@ -1,0 +1,56 @@
+{% extends 'base.html' %} {% block conteudo %}
+
+<div class="container-lg" style="max-width: 50%">
+  <form class="row" action="{% url 'listagem_equipamentos' %}" method="post">
+    {% csrf_token %}
+    <h1>Listagem de equipamentos</h1>
+
+    <div class="row mb-3 mb-3">
+      <label class="p-2 form-label" for="tipo"
+        >Digite o <strong>tipo</strong> de produto:</label
+      >
+      <input class="form-control" name="tipo" type="text" />
+    </div>
+    <div class="row mb-3">
+      <label class="p-2" for="fabricante"
+        >Digite o <strong>fabricante</strong> do produto:</label
+      >
+      <input class="form-control" name="tipo" type="text" />
+    </div>
+    <div class="row mb-3">
+      <label class="p-2" for="modelo"
+        >Digite o <strong>modelo</strong> do produto:</label
+      >
+      <input class="form-control" name="tipo" type="text" />
+    </div>
+    <div class="row mb-3">
+      <label class="p-2" for="numero_serie"
+        >Digite o <strong>número de série</strong> do produto:</label
+      >
+      <input class="form-control" name="tipo" type="number" />
+    </div>
+    <div class="row mb-3">
+      <label class="p-2" for="data_compra"
+        >Digite o <strong>Data de compra</strong> do produto:</label
+      >
+      <input class="form-control" name="tipo" type="date" />
+    </div>
+    <div class="row mb-3">
+      <label class="p-2" for="idEquipamento"
+        >Digite o <strong>Valor da compra</strong> do produto:</label
+      >
+      <input class="form-control" name="tipo" type="number" />
+    </div>
+
+    <div class="row mb-3 py-4">
+      <button type="button" class="btn btn-dark">Enviar</button>
+    </div>
+  </form>
+  <a href="{% url 'listagem_equipamentos' %}"
+    ><button type="button" class="btn btn-dark">
+      Equipamentos cadastrados
+    </button></a
+  >
+</div>
+
+{% endblock %}
